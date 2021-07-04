@@ -1,19 +1,29 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int faktoriyel_hesapla(int x){
-    int sayi=1;
-    for (int i=1; i<=x; i++) {
-        sayi*=i;
+class Hesaplama{
+    float kenar;
+public:
+    void deger_al(){
+        cout<<"Kenar uzunlugu:";
+        cin>>kenar;
     }
-    return sayi;
-}
+    float cevre_hesapla(){
+        return kenar*4;
+    }
+    float alan_hesapla(){
+        return kenar*kenar;
+    }
+};
 
-
- int main()
-{
-     int faktoriyel;
-     cout<<"Sayi giriniz:";
-     cin>>faktoriyel;
-     cout<<"Sayinin faktoryeli:"<<faktoriyel_hesapla(faktoriyel)<<endl;
+int main(void) {
+    Hesaplama bahce1,bahce2,bahce3;
+    bahce1.deger_al();
+    bahce2.deger_al();
+    bahce3.deger_al();
+    cout<<bahce1.cevre_hesapla()<<endl;
+    cout<<bahce2.alan_hesapla()<<endl;
+    cout<<bahce3.cevre_hesapla()<<" ve "<<bahce3.alan_hesapla()<<endl;
+    
+   return 0;
 }
