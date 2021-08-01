@@ -1,25 +1,33 @@
 #include <iostream>
-#include <string.h>
-#include <locale.h>
+#include <clocale>
+#include <stdio.h>
+#include <time.h>
+#include <ctime>
+#include <cstdlib>
+#include <cstring>
+#include <string>
 #include <fstream>
-
+#include"headers.h"
 using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL,"Turkish");
-    int ogr;
-    cout<<"Öğrenci sayısını giriniz";
-    cin >> ogr;
-    int puan;
-    ofstream dosya;
-    dosya.open("deneyap.txt",ios::app);
-    for(int x=0;x<ogr;x++){
-        cin>>puan;
-        dosya << puan << endl;
-        
+    ofstream dosya1,dosya2;
+    int b;
+    int a;
+    dosya1.open("deneyap.doc",ios::app);
+    dosya2.open("deneyap.txt",ios::app);
+    cout<<"Ogrenci sayisiniz giriniz:\n";
+    cin>>a;
+    for(int i=0;i<a;i++)
+    {
+        cout<<i+1<<". degeri giriniz:";
+        cin>>b;
+        dosya1<<b<<endl;
+        dosya2<<b<<endl;
     }
-    dosya.close();
 
-    return 0;
+    dosya1.close();
+    dosya2.close();
+    bitis();
 }
