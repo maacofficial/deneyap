@@ -7,41 +7,19 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "");
-    int islem;
-    cout << "1 - Günlük Oku" << endl;
-    cout << "2 - Günlük Yaz" << endl;
-    cin >> islem;
-    
-    if(islem==1){
-        ifstream dosya("deneyap.txt");
+    setlocale(LC_ALL,"Turkish");
+    int ogr;
+    cout<<"Öğrenci sayısını giriniz";
+    cin >> ogr;
+    int puan;
+    ofstream dosya;
+    dosya.open("deneyap.txt",ios::app);
+    for(int x=0;x<ogr;x++){
+        cin>>puan;
+        dosya << puan << endl;
         
-        if(!dosya.is_open()){
-            cout << "Dosya açılamadı!";
-            return 0;
-        }
-        string gunluk;
-        while(getline(dosya, gunluk))
-            cout << gunluk << endl;
-        dosya.close();
-        
-    }else{
-        string input;
-        string line;
-
-        while (getline(cin, line))
-        {
-            if (line == "!finish")
-                break;
-
-            input += line + "\n";
-        }
-        ofstream dosya;
-        dosya.open("deneyap.txt");
-        dosya << input;
-        dosya.close();
     }
-    
-    
+    dosya.close();
+
     return 0;
 }
