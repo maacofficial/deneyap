@@ -1,29 +1,47 @@
 #include <iostream>
+#include <string.h>
+#include <locale.h>
+#include <fstream>
+
 using namespace std;
 
-class Hesaplama{
-    float kenar;
-public:
-    void deger_al(){
-        cout<<"Kenar uzunlugu:";
-        cin>>kenar;
-    }
-    float cevre_hesapla(){
-        return kenar*4;
-    }
-    float alan_hesapla(){
-        return kenar*kenar;
-    }
-};
-
-int main(void) {
-    Hesaplama bahce1,bahce2,bahce3;
-    bahce1.deger_al();
-    bahce2.deger_al();
-    bahce3.deger_al();
-    cout<<bahce1.cevre_hesapla()<<endl;
-    cout<<bahce2.alan_hesapla()<<endl;
-    cout<<bahce3.cevre_hesapla()<<" ve "<<bahce3.alan_hesapla()<<endl;
+int main()
+{
+    setlocale(LC_ALL, "");
+    int islem;
+    cout << "1 - Günlük Oku" << endl;
+    cout << "2 - Günlük Yaz" << endl;
+    cin >> islem;
     
-   return 0;
+    if(islem==1){
+        ifstream dosya("deneyap.txt");
+        
+        if(!dosya.is_open()){
+            cout << "Dosya açılamadı!";
+            return 0;
+        }
+        string gunluk;
+        while(getline(dosya, gunluk))
+            cout << gunluk << endl;
+        dosya.close();
+        
+    }else{
+        string input;
+        string line;
+
+        while (getline(cin, line))
+        {
+            if (line == "!finish")
+                break;
+
+            input += line + "\n";
+        }
+        ofstream dosya;
+        dosya.open("deneyap.txt");
+        dosya << input;
+        dosya.close();
+    }
+    
+    
+    return 0;
 }

@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7962EBA8-CBC5-47B4-BE6A-88DCF59BFBAE"
-            shouldBeEnabled = "Yes"
+            uuid = "A01B39AE-37C0-457C-AB86-4BCFD56BD71D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "deneyap/main.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4"
-            endingLineNumber = "4"
-            landmarkName = "en_buyuk(dizi)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "main()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
